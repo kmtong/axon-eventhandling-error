@@ -1,7 +1,7 @@
 # HOW TO RUN
 
 ```
-mvn exec:java
+mvn compile exec:java
 ```
 
 ## Execution Steps
