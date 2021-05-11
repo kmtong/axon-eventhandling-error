@@ -6,6 +6,7 @@ import org.axonframework.config.EventProcessingConfiguration;
 import org.axonframework.eventhandling.SimpleEventHandlerInvoker;
 
 import com.cwbase.axonerror.commandhandlers.LeakyCommandHandler;
+import com.cwbase.axonerror.commandhandlers.NormalCommandHandler;
 import com.cwbase.axonerror.eventhandlers.ErrorThrowingEventHandler;
 import com.cwbase.axonerror.jaxrs.LeakyResource;
 
@@ -23,6 +24,7 @@ public class DemoApplication extends Application<Configuration> {
 
 		// command handler
 		configurer.registerCommandHandler((ax) -> new LeakyCommandHandler(ax.eventBus()));
+		configurer.registerCommandHandler((ax) -> new NormalCommandHandler());
 
 		// event processing
 		EventProcessingConfiguration eventProcConfig = new EventProcessingConfiguration();

@@ -16,8 +16,9 @@ public class LeakyCommandHandler {
 	}
 
 	@CommandHandler
-	public void leakHere(LeakyCommand cmd) {
+	public String leakHere(LeakyCommand cmd) {
 		eventBus.publish(GenericEventMessage.asEventMessage(new ErrorThrowingEvent()));
+		return "Leaky";
 	}
 
 }
